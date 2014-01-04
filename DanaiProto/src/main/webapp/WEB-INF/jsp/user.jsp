@@ -84,5 +84,41 @@
 	</tr>
 	</c:forEach>
 </table>
+<br>
+<h1>Category</h1>
+<table>
+	<tr>
+	<th>ID</th>
+	<th>name</th>
+	</tr>
+	<c:forEach items="${categoryList}" var="category">
+	<tr>
+		<td>${category.categoryId}</td>
+		<td>${category.name}</td>
+	</tr>
+	</c:forEach>
+</table>
+<br>
+<h1>Project</h1>
+<table>
+	<tr>
+	<th>ID</th>
+	<th>location</th>
+	<th>username</th>
+	<th>category</th>
+	<th>title</th>
+	<th>last date</th>
+	</tr>
+	<c:forEach items="${projectList}" var="project">
+	<tr>
+		<td>${project.projectId}</td>
+		<td>${project.location.city}</td>
+		<td>${project.user.nama}</td>
+		<td>${project.category.name}</td>
+		<td>${project.title}</td>
+		<td>${project.lastDate}</td>
+	</tr>
+	</c:forEach>
+</table>
 </body>
 </html>

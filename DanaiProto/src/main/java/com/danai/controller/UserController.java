@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.danai.dao.CategoryDao;
 import com.danai.dao.LocationDao;
+import com.danai.dao.ProjectDao;
 import com.danai.dao.UserDao;
 import com.danai.model.User;
 
@@ -23,6 +25,12 @@ public class UserController {
 	@Autowired
 	private LocationDao locationDao;
 	
+	@Autowired
+	private CategoryDao categoryDao;
+	
+	@Autowired
+	private ProjectDao projectDao;
+	
 	@RequestMapping("/")
 	public String setupForm(Map<String, Object> map)
 	{
@@ -30,6 +38,8 @@ public class UserController {
 		map.put("user",user);
 		map.put("userList",userDao.getAllUser());
 		map.put("locationList", locationDao.getAllLocation());
+		map.put("categoryList", categoryDao.getAllCategory());
+		map.put("projectList", projectDao.getAllProject() );
 		return "user";
 		
 	}
