@@ -48,12 +48,14 @@
 </form:form>
 <br>
 <table>
+	<tr>
 	<th>ID</th>
 	<th>username</th>
 	<th>password</th>
 	<th>nama</th>
 	<th>foto</th>
 	<th>bio</th>
+	</tr>
 	<c:forEach items="${userList}" var="user">
 	<tr>
 		<td>${user.userId}</td>
@@ -63,7 +65,22 @@
 		<td>${user.foto}</td>
 		<td>${user.bio}</td>
 	</tr>
-	
+	</c:forEach>
+</table>
+<br>
+<h1>Location</h1>
+<table>
+	<tr>
+	<th>ID</th>
+	<th>city</th>
+	<th>province</th>
+	</tr>
+	<c:forEach items="${locationList}" var="location">
+	<tr>
+		<td>${location.locationId}</td>
+		<td>${location.city}</td>
+		<td>${location.province}</td>
+	</tr>
 	</c:forEach>
 </table>
 </body>
