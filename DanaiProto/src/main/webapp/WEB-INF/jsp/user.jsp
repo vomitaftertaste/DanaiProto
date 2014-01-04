@@ -5,15 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link href="<c:url value="/resources/bootstrap/test.css" />" rel="stylesheet" type="text/css"/>
 <title>User</title>
 </head>
 <body>
-<h1>User form</h1>
+<h1>User for</h1>
 <form:form action="user.do" method="POST" commandName="user">
 	<table>
 		<tr>
 			<td>User ID</td>
-			<td><form:input path="userId" /></td>
+			<td><form:input cssClass="input-xlarge" path="userId" /></td>
 		</tr>
 		<tr>
 			<td>username</td>
