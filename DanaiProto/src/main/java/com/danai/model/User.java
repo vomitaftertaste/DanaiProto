@@ -1,10 +1,14 @@
 package com.danai.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -19,11 +23,14 @@ public class User {
 	@Column
 	private String password;
 	@Column
-	private String nama;
+	private String name;
 	@Column
 	private String foto;
 	@Column
 	private String bio;
+	@OneToMany(mappedBy="user", fetch=FetchType.EAGER)
+	private Set<Project> createdProject;
+	
 	
 	public User() {}
 	public User(int id_user, String username, String password) {
@@ -33,11 +40,11 @@ public class User {
 		this.password = password;
 	}
 	
-	public String getNama() {
-		return nama;
+	public String getname() {
+		return name;
 	}
-	public void setNama(String nama) {
-		this.nama = nama;
+	public void setname(String name) {
+		this.name = name;
 	}
 	public String getFoto() {
 		return foto;
@@ -77,6 +84,14 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public Set<Project> getCreatedProject() {
+		return createdProject;
+	}
+	public void setCreatedProject(Set<Project> createdProject) {
+		this.createdProject = createdProject;
+	}
+	
+	
 
 	
 	

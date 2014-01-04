@@ -9,6 +9,8 @@
         <mapping class="com.danai.model.Location" />
         <mapping class="com.danai.model.Category" />
         <mapping class="com.danai.model.Project" />
+        <mapping class="com.danai.model.Fund" />
+        <mapping class="com.danai.model.Comment" />
         
     </session-factory>         
 </hibernate-configuration>

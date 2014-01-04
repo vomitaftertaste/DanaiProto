@@ -25,8 +25,8 @@
 			<td><form:input path="password" /></td>
 		</tr>
 		<tr>
-			<td>nama</td>
-			<td><form:input path="nama" /></td>
+			<td>name</td>
+			<td><form:input path="name" /></td>
 		</tr>
 		<tr>
 			<td>foto</td>
@@ -53,7 +53,7 @@
 	<th>ID</th>
 	<th>username</th>
 	<th>password</th>
-	<th>nama</th>
+	<th>name</th>
 	<th>foto</th>
 	<th>bio</th>
 	</tr>
@@ -62,9 +62,31 @@
 		<td>${user.userId}</td>
 		<td>${user.username}</td>
 		<td>${user.password}</td>
-		<td>${user.nama}</td>
+		<td>${user.name}</td>
 		<td>${user.foto}</td>
 		<td>${user.bio}</td>
+	</tr>
+	</c:forEach>
+</table>
+<br>
+<h1>created project for user 1</h1>
+<table>
+	<tr>
+	<th>ID</th>
+	<th>location</th>
+	<th>username</th>
+	<th>category</th>
+	<th>title</th>
+	<th>last date</th>
+	</tr>
+	<c:forEach items="${createdProjectList}" var="project">
+	<tr>
+		<td>${project.projectId}</td>
+		<td>${project.location.city}</td>
+		<td>${project.user.name}</td>
+		<td>${project.category.name}</td>
+		<td>${project.title}</td>
+		<td>${project.lastDate}</td>
 	</tr>
 	</c:forEach>
 </table>
@@ -113,10 +135,43 @@
 	<tr>
 		<td>${project.projectId}</td>
 		<td>${project.location.city}</td>
-		<td>${project.user.nama}</td>
+		<td>${project.user.name}</td>
 		<td>${project.category.name}</td>
 		<td>${project.title}</td>
 		<td>${project.lastDate}</td>
+	</tr>
+	</c:forEach>
+</table>
+<br>
+<h1>Fund for project 1</h1>
+<table>
+	<tr>
+	<th>ID</th>
+	<th>username</th>
+	<th>value</th>
+	</tr>
+	<c:forEach items="${fundProjectList}" var="fund">
+	<tr>
+		<td>${fund.fundId}</td>
+		<td>${fund.user.name}</td>
+		<td>${fund.value}</td>
+		<td>${fund.project.title}</td>
+	</tr>
+	</c:forEach>
+</table>
+<br>
+<h1>Comment for project 1</h1>
+<table>
+	<tr>
+	<th>ID</th>
+	<th>username</th>
+	<th>content</th>
+	</tr>
+	<c:forEach items="${commentProjectList}" var="comment">
+	<tr>
+		<td>${comment.commentId}</td>
+		<td>${comment.user.name}</td>
+		<td>${comment.content}</td>
 	</tr>
 	</c:forEach>
 </table>

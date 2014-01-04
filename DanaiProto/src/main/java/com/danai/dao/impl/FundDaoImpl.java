@@ -7,46 +7,47 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.danai.dao.ProjectDao;
-import com.danai.model.Project;
+import com.danai.dao.FundDao;
+import com.danai.model.Fund;
 
 @Repository
-public class ProjectDaoImpl implements ProjectDao {
-	
+public class FundDaoImpl implements FundDao {
+
 	@Autowired
 	private SessionFactory session;
-
+	
 	@Transactional
-	public void add(Project project) {
+	public void add(Fund fund) {
 		// TODO Auto-generated method stub
-		session.getCurrentSession().save(project);
+		session.getCurrentSession().save(fund);
 
 	}
 
 	@Transactional
-	public void edit(Project project) {
+	public void edit(Fund fund) {
 		// TODO Auto-generated method stub
-		session.getCurrentSession().update(project);
+		session.getCurrentSession().update(fund);
 
 	}
 
 	@Transactional
-	public void delete(int projectId) {
+	public void delete(int fundId) {
 		// TODO Auto-generated method stub
-		session.getCurrentSession().delete(getProject(projectId));
+		session.getCurrentSession().delete(getFund(fundId));
 
 	}
 
 	@Transactional
-	public Project getProject(int projectId) {
+	public Fund getFund(int fundId) {
 		// TODO Auto-generated method stub
-		return (Project)session.getCurrentSession().get(Project.class, projectId);
+		return (Fund)session.getCurrentSession().get(Fund.class, fundId);
 	}
 
 	@Transactional
-	public List getAllProject() {
+	public List getAllFund() {
 		// TODO Auto-generated method stub	
-		return session.getCurrentSession().createQuery("from Project").list();
+		return session.getCurrentSession().createQuery("from Fund").list();
 	}
+
 
 }

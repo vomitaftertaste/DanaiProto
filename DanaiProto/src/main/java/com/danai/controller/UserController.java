@@ -40,6 +40,9 @@ public class UserController {
 		map.put("locationList", locationDao.getAllLocation());
 		map.put("categoryList", categoryDao.getAllCategory());
 		map.put("projectList", projectDao.getAllProject() );
+		map.put("createdProjectList", userDao.getUser(1).getCreatedProject() );
+		map.put("fundProjectList", projectDao.getProject(2).getFunds() );
+		map.put("commentProjectList", projectDao.getProject(2).getComments() );
 		return "user";
 		
 	}
